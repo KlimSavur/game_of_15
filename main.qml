@@ -3,7 +3,15 @@ import QtQuick.Window 2.12
 
 Window {
     visible: true
-    width: 640
+    width: 480
     height: 480
-    title: qsTr("Hello World")
+    title: qsTr("Game of Fifteens")
+    id: _window
+    GridView{
+        anchors.fill: parent
+        delegate: NodeDelegate {}
+        model: 16
+        cellHeight: _window.height/4
+        cellWidth:  _window.width/4
+    }
 }
