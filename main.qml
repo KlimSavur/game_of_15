@@ -8,9 +8,13 @@ Window {
     title: qsTr("Game of Fifteens")
     id: _window
     GridView{
+        id: _gridView
+        interactive: false
         anchors.fill: parent
+        model: NodeModel {
+            id: _model
+        }
         delegate: NodeDelegate {}
-        model: 16
         cellHeight: _window.height/4
         cellWidth:  _window.width/4
     }
