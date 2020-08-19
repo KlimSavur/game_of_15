@@ -17,5 +17,4 @@ ListModel {
     ListElement{ number: 14}
     ListElement{ number: 15}
     ListElement{ number: 16}
-
 }

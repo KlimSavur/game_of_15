@@ -1,8 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>NodeDelegate.qml</file>
         <file>NodeModel.qml</file>
         <file>Node.qml</file>
+        <file>WinPopup.qml</file>
+        <file>Board.qml</file>
     </qresource>
 </RCC>
