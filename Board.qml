@@ -1,6 +1,37 @@
 import QtQuick 2.0
 
 GridView{
+    id: root
+    property alias popupWidth: _popup.width
+    property alias popupHeight: _popup.height
+    interactive: false
+    focus: true
+
+    model: NodeModel {
+        id: _model;
+    }
+    delegate: Node{
+        width: root.cellWidth
+        height: root.cellHeight
+        onPressed:{
+            move(index)
+        }
+    }
+
+    move: Transition {
+        NumberAnimation { properties: "x,y"; duration: 350; }
+    }
+
+    WinPopup{
+        id: _popup
+        anchors.centerIn: root
+        onPressed: shuffle()
+    }
+
+    Keys.onSpacePressed: shuffle()
+
+    Component.onCompleted: shuffle()
+
     function isWin(){
        var i = 0
         while ((i+1) === _model.get(i++).number){
@@ -35,20 +66,43 @@ GridView{
                     sum++
                 }
         }
-        return !sum%2
+        return !(sum%2)
     }
-
-    interactive: false
-    cellHeight: _window.height/4
-    cellWidth:  _window.width/4
-    model: NodeModel {
-        id: _model;
+    function move(pos){
+        console.log(pos)
+        if (_model.get(pos).number === 16){
+            return
+        }
+        if (pos <= 11){
+            if (_model.get(pos+4).number === 16){
+                _model.move(pos, pos+4,1)
+                _model.move(pos+3, pos,1)
+                isWin()
+                return
+            }
+        }
+        if (pos >= 4){
+            if (_model.get(pos-4).number === 16){
+                _model.move(pos, pos-4, 1)
+                _model.move(pos-3, pos, 1)
+                isWin()
+                return
+            }
+        }
+        if (pos >= 1){
+            if (_model.get(pos-1).number === 16){
+                _model.move(pos, pos-1, 1)
+                isWin()
+                return
+            }
+        }
+        if (pos <= 14){
+            if (_model.get(pos+1).number === 16){
+                _model.move(pos, pos+1, 1)
+                isWin()
+                return
+            }
+        }
     }
-    delegate: Node{}
-    Component.onCompleted: shuffle()
-    move: Transition {
-        NumberAnimation { properties: "x,y"; duration: 350; }
-    }
-    focus: true
-    Keys.onSpacePressed: shuffle()
 }
+

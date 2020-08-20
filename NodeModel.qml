@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
 ListModel {
+    id: root
     ListElement{ number: 1}
     ListElement{ number: 2}
     ListElement{ number: 3}

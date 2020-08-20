@@ -12,10 +12,9 @@ Window {
     Board{
         id: _gridView
         anchors.fill: parent
-    }
-
-    WinPopup{
-        id: _popup
-        anchors.centerIn: parent
+        cellHeight: _window.height/4
+        cellWidth:  _window.width/4
+        popupWidth: 3*_window.width/5
+        popupHeight: 3*_window.height/5
     }
 }
