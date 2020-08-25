@@ -1,18 +1,19 @@
 TEMPLATE = lib
-TARGET = Engine
+TARGET = GamePlugin
 QT += qml quick
 CONFIG += plugin c++11
 
+DESTDIR = ../Game
 TARGET = $$qtLibraryTarget($$TARGET)
-uri = com.engine
+uri = Game
 
 # Input
 SOURCES += \
-        engine_plugin.cpp \
+        gameplugin_plugin.cpp \
         game.cpp
 
 HEADERS += \
-        engine_plugin.h \
+        gameplugin_plugin.h \
         game.h
 
 DISTFILES = qmldir
@@ -32,3 +33,7 @@ unix {
     target.path = $$installPath
     INSTALLS += target qmldir
 }
+# Copy the qmldir file to the same folder as the plugin binary
+cpqmldir.files = qmldir
+cpqmldir.path = $$DESTDIR
+COPIES += cpqmldir

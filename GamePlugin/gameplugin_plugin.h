@@ -1,14 +1,15 @@
-#ifndef ENGINE_PLUGIN_H
-#define ENGINE_PLUGIN_H
+#ifndef GAMEPLUGIN_PLUGIN_H
+#define GAMEPLUGIN_PLUGIN_H
 
 #include <QQmlExtensionPlugin>
 
-class EnginePlugin : public QQmlExtensionPlugin
+class GamePluginPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID QQmlExtensionInterface_iid)
+
 public:
     void registerTypes(const char *uri) override;
 };
 
-#endif // GAME_PLUGIN_H
+#endif // GAMEPLUGIN_PLUGIN_H
