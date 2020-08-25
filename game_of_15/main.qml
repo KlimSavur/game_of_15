@@ -1,6 +1,5 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
-import QtQuick.Controls 2.12
 
 Window {
     id: _window
@@ -9,7 +8,7 @@ Window {
     height: 480
     title: qsTr("Game of Fifteens")
 
-    Board{
+    Board {
         id: _gridView
         anchors.fill: parent
         cellHeight: _window.height/4
