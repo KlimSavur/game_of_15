@@ -8,22 +8,22 @@ Popup {
     opacity: 0.88
 
     contentItem:
-        Rectangle{
+        Rectangle {
             anchors.fill: parent
             color: "lightblue"
-            Text{
+            Text {
                 anchors.centerIn: parent
                 font.bold: true
                 text: qsTr("You won!")
             }
 
-            Button{
+            Button {
                 width: root.width
                 height: root.height/4
                 anchors.bottom: parent.bottom
                 text: qsTr("Close and Restart")
 
-                background: Rectangle{
+                background: Rectangle {
                     anchors.fill: parent
                     color: "red"
                 }

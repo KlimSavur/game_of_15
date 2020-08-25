@@ -6,23 +6,19 @@ class Game: public QAbstractListModel
 {
     Q_OBJECT
 public:
-    Game(QObject *parent = 0);
-    int rowCount( const QModelIndex &parent) const override;
+    Game(QObject *parent = nullptr);
+    int rowCount(const QModelIndex&) const override;
     QVariant data(const QModelIndex &parent, int role) const override;
     Q_INVOKABLE void move(int index);
     Q_INVOKABLE void shuffle();
-    void isWin() const;
-    bool checkBoard() const;
+
 signals:
     void openPopup() const;
-protected:
-    QHash<int, QByteArray> roleNames() const override;
 private:
+    void checkWin() const;
+    bool checkBoard() const;
+    void applyMove(const int& pos,const int& first_offset, const int& second_offset = 0);
     QList<int> m_numbers;
-    QHash<int, QByteArray> m_roleNames;
-    enum RoleNames{
-        NumberRole = Qt::UserRole
-    };
 
 };
 

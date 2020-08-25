@@ -3,7 +3,7 @@ TARGET = GamePlugin
 QT += qml quick
 CONFIG += plugin c++11
 
-DESTDIR = ../Game
+DESTDIR = ../bin/Game
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = Game
 

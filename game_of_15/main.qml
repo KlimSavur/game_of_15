@@ -8,7 +8,7 @@ Window {
     height: 480
     title: qsTr("Game of Fifteens")
 
-    Board{
+    Board {
         id: _gridView
         anchors.fill: parent
         cellHeight: _window.height/4
