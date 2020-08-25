@@ -11,10 +11,10 @@ public:
     QVariant data(const QModelIndex &parent, int role) const override;
     Q_INVOKABLE void move(int index);
     Q_INVOKABLE void shuffle();
-    void isWin();
+    void isWin() const;
     bool checkBoard() const;
 signals:
-    void openPopup();
+    void openPopup() const;
 protected:
     QHash<int, QByteArray> roleNames() const override;
 private:

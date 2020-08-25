@@ -89,7 +89,7 @@ void Game::shuffle()
     emit endResetModel();
 }
 
-void Game::isWin()
+void Game::isWin() const
 {
     int counter = 0;
     while ((counter+1) == m_numbers.at(counter)){
