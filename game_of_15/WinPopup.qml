@@ -19,7 +19,7 @@ Popup {
 
             Button {
                 width: root.width
-                height: root.height/4
+                height: root.height / 4
                 anchors.bottom: parent.bottom
                 text: qsTr("Close and Restart")
 

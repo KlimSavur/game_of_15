@@ -11,9 +11,9 @@ Window {
     Board {
         id: _gridView
         anchors.fill: parent
-        cellHeight: _window.height/4
-        cellWidth:  _window.width/4
-        popupWidth: 3*_window.width/5
-        popupHeight: 3*_window.height/5
+        cellHeight: _window.height / 4
+        cellWidth:  _window.width / 4
+        popupWidth: 3 * _window.width / 5
+        popupHeight: 3 * _window.height / 5
     }
 }
