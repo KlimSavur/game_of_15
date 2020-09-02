@@ -1,5 +1,5 @@
 #include "game.h"
-#include <QtGui>
+#include <cmath>
 
 Game::Game(QObject *parent)
     :QAbstractListModel(parent)

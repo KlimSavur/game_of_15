@@ -1,5 +1,5 @@
-#ifndef GAME_H
-#define GAME_H
+#pragma once
+
 #include<QAbstractListModel>
 
 class Game: public QAbstractListModel
@@ -11,7 +11,6 @@ public:
     QVariant data(const QModelIndex &parent, int role) const override;
     Q_INVOKABLE void move(int index);
     Q_INVOKABLE void shuffle();
-
 signals:
     void openPopup() const;
 private:
@@ -22,4 +21,3 @@ private:
 
 };
 
-#endif // GAME_H

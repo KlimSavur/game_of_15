@@ -1,5 +1,4 @@
-#ifndef GAMEPLUGIN_PLUGIN_H
-#define GAMEPLUGIN_PLUGIN_H
+#pragma once
 
 #include <QQmlExtensionPlugin>
 
@@ -12,4 +11,3 @@ public:
     void registerTypes(const char *uri) override;
 };
 
-#endif // GAMEPLUGIN_PLUGIN_H
